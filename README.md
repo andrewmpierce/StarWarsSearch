@@ -1,3 +1,6 @@
+This is a Star Wars search application using the freely available star wars API, [https://swapi.co](https://swapi.co). I also utilized the ReduxSimpleStarter template application available from Stephen Grider at https://github.com/StephenGrider/ReduxSimpleStarter. This application is based on a Youtube Search app that Stephen's [course on Udemy](https://www.udemy.com/react-redux/) walks through.
+
+
 # ReduxSimpleStarter
 
 Interested in learning [Redux](https://www.udemy.com/react-redux/)?
