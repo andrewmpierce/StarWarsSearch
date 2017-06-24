@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import SearchBar from './search-bar';
-import _ from 'lodash';
 
 
 export default class App extends Component {
@@ -19,16 +18,20 @@ export default class App extends Component {
 
   characterSearch(type) {
     axios.get(`https://swapi.co/api/people/?search=${type}`).then((result)=>{
-      console.log(result.data.results[0].name);
-      this.setState({
-        selectedCharacter: result.data.results[0].name
-      });
+      if (result.data.results) {
+        var name = result.data.results[0].name;
+        console.log(name);
+      }
+      if (name) {
+        this.setState({
+          selectedCharacter: name
+        });
+      }
 
     });
   }
 
   render() {
-    const characterSearch = _.debounce((term) => {this.characterSearch(term)}, 300);
 
     return (
       <div>
