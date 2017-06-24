@@ -16,16 +16,22 @@ export default class App extends Component {
       characters: []
      };
 
+     this.characterSearch('Luke', true);
+
   }
 
 
-  characterSearch(type) {
+  characterSearch(type, initial=false) {
     axios.get(`https://swapi.co/api/people/?search=${type}`).then((result)=>{
       if (result.data.count != 0) {
         var name = result.data.results[0].name;
-        console.log(name);
       }
-      if (name) {
+
+      if (name && initial) {
+        this.setState({
+          selectedCharacter: result.data.results[0]
+        })
+      } else if (name) {
         this.setState({
           characters: result.data.results
         });
@@ -45,8 +51,8 @@ export default class App extends Component {
     return (
       <div>
         <HeaderLogo />
-        <SearchBar onSearchTermChange={this.characterSearch}  onPressEnter={this.characterSelect}/>
         <CharacterDetail selectedCharacter={this.state.selectedCharacter}  />
+        <SearchBar onSearchTermChange={this.characterSearch}  onPressEnter={this.characterSelect} />
         <CharacterList characters={this.state.characters} onCharacterSelect={ selectedCharacter => this.setState({selectedCharacter}) } />
       </div>
     );

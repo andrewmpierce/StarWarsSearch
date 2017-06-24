@@ -4,7 +4,7 @@ const CharacterDetail = ({selectedCharacter}) => {
   if (!selectedCharacter) {
     return <div className="yellow-text center">Search for a character!</div>
   }
-  console.log(selectedCharacter);
+
   return (
     <div className="yellow-text center">
       <h3>Name: {selectedCharacter.name} </h3>

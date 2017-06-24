@@ -8,18 +8,20 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div className="search-bar center">
-        <input
+      <div className="search-bar center yellow-text">
+        <h5> Search for a Different Character </h5>
+        <input className='black-text'
           value = {this.state.term}
+          placeholder="Darth Vader"
           onChange={event => this.onInputChange(event.target.value)}
-          onKeyPress={this.handleKeyPress} />
+          onKeyPress={this.handleKeyPress}
+        />
       </div>
     );
   }
 
   handleKeyPress = (e) => {
    if (e.key === 'Enter') {
-     console.log('do validate');
      this.props.onPressEnter();
    }
   }
