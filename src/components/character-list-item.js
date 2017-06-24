@@ -7,7 +7,7 @@ const CharacterListItem = ({character, onCharacterSelect}) => {
   }
 
   return (
-    <li className="list-group" onClick={() => onCharacterSelect(character)}>
+    <li className="list-group yellow-text center" onClick={() => onCharacterSelect(character)}>
       {character.name}
     </li>
   );

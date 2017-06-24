@@ -1,3 +1,17 @@
+body {
+    background-image: url("./images/star-background.jpg");
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+
 li:hover {
     background-color: #D3D3D3;
+}
+
+.yellow-text {
+  color: yellow;
+}
+
+.center {
+  text-align: center;
 }

@@ -8,12 +8,20 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div className="search-bar">
+      <div className="search-bar center">
         <input
           value = {this.state.term}
-          onChange={event => this.onInputChange(event.target.value)} />
+          onChange={event => this.onInputChange(event.target.value)}
+          onKeyPress={this.handleKeyPress} />
       </div>
     );
+  }
+
+  handleKeyPress = (e) => {
+   if (e.key === 'Enter') {
+     console.log('do validate');
+     this.props.onPressEnter();
+   }
   }
 
   onInputChange(term) {
