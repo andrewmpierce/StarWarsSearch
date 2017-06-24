@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import CharacterDetail from './character-detail';
+import CharacterListItem from './character-list-item';
 
 const CharacterList = (props) => {
   //console.log('character list: ' + props.characters);
   const characters = props.characters.map(character => {
-    console.log(character);
+    //console.log(character);
     return (
-        <CharacterDetail
+        <CharacterListItem
           key={character.url}
           character={character}
+          onCharacterSelect={props.onCharacterSelect}
         />
     );
   });

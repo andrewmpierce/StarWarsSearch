@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 
-const CharacterDetail = (character) => {
-  if (!character.character) {
-    return <div>No character yet</div>
+const CharacterDetail = ({selectedCharacter}) => {
+  if (!selectedCharacter) {
+    return <div>No selected character yet</div>
   }
-
+  console.log(selectedCharacter);
   return (
-    <li className="list-group">
-      {character.character.name}
-    </li>
+    <div>
+      {selectedCharacter.name}
+      {selectedCharacter.url}
+    </div>
   );
 
 }
