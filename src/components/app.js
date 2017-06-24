@@ -38,7 +38,7 @@ export default class App extends Component {
     return (
       <div>
         <SearchBar onSearchTermChange={this.characterSearch} />
-        <div>{this.state.selectedCharacter}</div>
+        
         <CharacterList characters={this.state.characters} />
       </div>
     );
