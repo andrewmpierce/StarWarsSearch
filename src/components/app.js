@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import SearchBar from './search-bar';
-
+import CharacterList from './character-list';
 
 export default class App extends Component {
   constructor(props) {
@@ -10,6 +10,7 @@ export default class App extends Component {
 
     this.state = {
       selectedCharacter: null,
+      characters: []
      };
 
      this.characterSearch('r2');
@@ -24,7 +25,8 @@ export default class App extends Component {
       }
       if (name) {
         this.setState({
-          selectedCharacter: name
+          selectedCharacter: name,
+          characters: result.data.results
         });
       }
 
@@ -37,6 +39,7 @@ export default class App extends Component {
       <div>
         <SearchBar onSearchTermChange={this.characterSearch} />
         <div>{this.state.selectedCharacter}</div>
+        <CharacterList characters={this.state.characters} />
       </div>
     );
   }
