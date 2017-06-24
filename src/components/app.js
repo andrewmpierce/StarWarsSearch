@@ -18,7 +18,7 @@ export default class App extends Component {
 
   characterSearch(type) {
     axios.get(`https://swapi.co/api/people/?search=${type}`).then((result)=>{
-      if (result.data.results) {
+      if (result.data.count != 0) {
         var name = result.data.results[0].name;
         console.log(name);
       }
