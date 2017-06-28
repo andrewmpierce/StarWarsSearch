@@ -8,9 +8,9 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div className="search-bar center yellow-text">
+      <div className="center yellow-text">
         <h5> Search for a Different Character </h5>
-        <input className='black-text'
+        <input className='black-text search-bar'
           value = {this.state.term}
           placeholder="Darth Vader"
           onChange={event => this.onInputChange(event.target.value)}
